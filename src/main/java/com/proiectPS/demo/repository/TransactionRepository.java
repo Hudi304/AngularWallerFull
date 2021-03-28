@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface TransactionRepository extends CrudRepository<Transasction,Long> {
+
+    Transasction findFirstById(Long id);
 }

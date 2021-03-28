@@ -9,15 +9,21 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends CrudRepository<User,Long> {
+    Boolean existsByEmail(String email);
+    Boolean existsByNickname(String nickname);
+
     User findFirstById(Long id);
+    User findFirstByNickname(String nickanme);
+    User findFirstByEmail(String email);
 
     List<User> findAllByNickname(String nickname);
-
     List<User> findByNickname(String nickname);
 
-    User findFirstByNickname(String nickanme);
+    void deleteByNickname(String nickname);
 
-    User findFirstByEmail(String email);
+
+
+
 
 
 

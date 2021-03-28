@@ -26,6 +26,11 @@ public class Currency {
     private String name;
     private double priceInDollars;
 
+    public Currency (String name, double priceInDollars){
+        this.name = name;
+        this.priceInDollars = priceInDollars;
+    }
+
 
 
     public Long getId() {

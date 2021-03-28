@@ -30,6 +30,13 @@ public class Transasction {
     @OneToOne
     private User to;
 
+    public Transasction(Currency currencie, double amount, User from, User to){
+        this.curr = currencie;
+        this.amount = amount;
+        this.from = from;
+        this.to =  to;
+    }
+
     //private String dateTime;
 
 

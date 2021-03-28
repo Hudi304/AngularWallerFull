@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AdminRepository extends CrudRepository<Admin, Long> {
 
+    Admin findFirstByNickname(String nickname);
+    Boolean existsAdminByNickname(String nickname);
+    Boolean existsAdminByEmail(String email);
 
 
 }

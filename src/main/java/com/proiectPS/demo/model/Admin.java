@@ -1,5 +1,6 @@
 package com.proiectPS.demo.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,6 @@ public class Admin {
     private String email;
 
     private String role;
-
 
 
 

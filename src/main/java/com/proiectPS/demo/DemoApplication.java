@@ -1,8 +1,10 @@
 package com.proiectPS.demo;
 
+import com.proiectPS.demo.model.Admin;
 import com.proiectPS.demo.model.Currency;
 import com.proiectPS.demo.model.Transasction;
 import com.proiectPS.demo.model.User;
+import com.proiectPS.demo.repository.AdminRepository;
 import com.proiectPS.demo.repository.CurrencyRepository;
 import com.proiectPS.demo.repository.TransactionRepository;
 import com.proiectPS.demo.repository.UserRepository;
@@ -28,9 +30,34 @@ public class DemoApplication {
 
 	@Bean
 	CommandLineRunner init(UserRepository userRepository,
-						   CurrencyRepository currencyRepository){
+						   CurrencyRepository currencyRepository,
+						   AdminRepository adminRepository,
+						   TransactionRepository transactionRepository){
 		//injecteaza reporuile
 		return args -> {
+			Currency bitcoin =  currencyRepository.findFirstByName("BitCoin");
+			User tudor = userRepository.findFirstByNickname("Tudor");
+			User dani = userRepository.findFirstByNickname("Dani");
+
+			Transasction tr1  =  new Transasction(bitcoin, 0.003f ,tudor,dani);
+
+			//transactionRepository.save(tr1);
+
+			Transasction tr = transactionRepository.findFirstById(27l);
+
+			System.out.println( tr.getFrom().toString());
+
+
+//			Currency currency1 =  new Currency("BitCoin",50000);
+//			Currency currency2 =  new Currency("Etherium",2000);
+//
+//			currencyRepository.save(currency1);
+//			currencyRepository.save(currency2);
+
+
+//			Admin admin  = new Admin(null,"Hudi","1234", "hudisteanum@yahoo.com","BasicAdmin");
+//
+//			adminRepository.save(admin);
 
 //			Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
 //				User user = new User(name, name.toLowerCase() + "@domain.com");

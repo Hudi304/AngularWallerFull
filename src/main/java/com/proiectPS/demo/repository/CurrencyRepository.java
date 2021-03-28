@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CurrencyRepository extends CrudRepository<Currency,Long> {
     Currency findFirstById(Long id);
+
+    Currency findFirstByName(String name);
 }
